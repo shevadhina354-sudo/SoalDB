@@ -1,4 +1,10 @@
 <?php
+include 'blok.php';
+if ($_SESSION['role'] == 'mhs') {
+    header("location: index.php");
+    exit();
+}
+
 include "db.php";
 
 if (!isset($_GET['kodeMatkul'])) {

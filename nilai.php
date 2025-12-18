@@ -10,6 +10,7 @@
 
 <div class="container">
     <h3 class="mb-3">Data Mata Kuliah</h3>
+    <a href="tambah_nilai.php" class="btn btn-primary mb-3">+ Tambah Matkul</a>
 
     <table class="table table-bordered table-striped">
         <thead>
@@ -18,6 +19,7 @@
                 <th>Nama Matkul</th>
                 <th>SKS</th>
                 <th>NIDN</th>
+                 <th width="150">Aksi</th>
             </tr>
         </thead>
 
@@ -33,6 +35,15 @@
                 <td><?= $row['namaMatkul'] ?></td>
                 <td><?= $row['sks'] ?></td>
                 <td><?= $row['nidn'] ?></td>
+
+                <td>
+                    <a href="edit_nilai.php?kode=<?= $row['kodeMatkul'] ?>" 
+                       class="btn btn-warning btn-sm">Edit</a>
+
+                   <a href="hapus_nilai.php?kodeMatkul=<?= $row['kodeMatkul'] ?>" 
+                    class="btn btn-danger btn-sm"
+                    onclick="return confirm('Yakin hapus data?')">Hapus</a>
+                </td>
             </tr>
         <?php } ?>
         </tbody>

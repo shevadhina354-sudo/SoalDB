@@ -1,4 +1,10 @@
 <?php
+include 'blok.php';
+if ($_SESSION['role'] == 'mhs') {
+    header("location: index.php");
+    exit();
+}
+
 include "db.php";
 
 if (!isset($_GET['nidn'])) {
@@ -8,7 +14,7 @@ if (!isset($_GET['nidn'])) {
 $nidn = $_GET['nidn'];
 $sql = "SELECT * FROM tbl_dosen WHERE nidn = '$nidn'";
 $query = mysqli_query($conn, $sql);
-$data = mysqli_fetch_assoc($query);
+$data = mysqli_fetch_assoc($conn, $query);
 
 if (!$data) {
     die("Data tidak ditemukan.");

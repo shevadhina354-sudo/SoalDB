@@ -29,7 +29,7 @@
         $sql = "SELECT * FROM tbl_matkul ORDER BY kodeMatkul ASC";
         $query = mysqli_query($conn, $sql);
 
-        while ($row = mysqli_fetch_assoc($conn , $query)) {
+        while ($row = mysqli_fetch_assoc($query)) {
         ?>
             <tr>
                 <td><?= $row['kodeMatkul'] ?></td>

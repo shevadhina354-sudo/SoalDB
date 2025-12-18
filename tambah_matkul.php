@@ -1,3 +1,11 @@
+<?php
+include 'blok.php';
+if ($_SESSION['role'] == 'mhs') {
+    header("location: index.php");
+    exit();
+}
+?>
+
 <!doctype html>
 <html lang="id">
 <head>
