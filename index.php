@@ -8,9 +8,7 @@ include 'blok.php';
     <meta charset="UTF-8">
     <title>Sistem Akademik</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
@@ -34,7 +32,6 @@ include 'blok.php';
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#">Sistem Akademik</a>
@@ -46,13 +43,11 @@ include 'blok.php';
     </div>
 </nav>
 
-<!-- CONTENT -->
 <div class="container mt-5">
     <h3 class="text-center mb-4 fw-bold">Menu Utama</h3>
 
     <div class="row g-4">
 
-        <!-- Mahasiswa -->
         <div class="col-md-3">
             <div class="card card-menu text-center shadow-sm">
                 <div class="card-body">
@@ -65,7 +60,6 @@ include 'blok.php';
             </div>
         </div>
 
-        <!-- Dosen -->
         <div class="col-md-3">
             <div class="card card-menu text-center shadow-sm">
                 <div class="card-body">
@@ -78,7 +72,6 @@ include 'blok.php';
             </div>
         </div>
 
-        <!-- Matkul -->
         <div class="col-md-3">
             <div class="card card-menu text-center shadow-sm">
                 <div class="card-body">
@@ -91,7 +84,6 @@ include 'blok.php';
             </div>
         </div>
 
-        <!-- Nilai -->
         <div class="col-md-3">
             <div class="card card-menu text-center shadow-sm">
                 <div class="card-body">

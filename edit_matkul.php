@@ -14,7 +14,7 @@ if (!isset($_GET['kode'])) {
 $kode = $_GET['kode'];
 $sql = "SELECT * FROM tbl_matkul WHERE kodeMatkul = '$kode'";
 $query = mysqli_query($conn, $sql);
-$data = mysqli_fetch_assoc($conn, $query);
+$data = mysqli_fetch_assoc($query);
 
 if (!$data) {
     die("Data tidak ditemukan.");

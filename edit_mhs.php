@@ -14,7 +14,7 @@ if (!isset($_GET['nim'])) {
 $nim = $_GET['nim'];
 $sql = "SELECT * FROM tbl_mahasiswa WHERE nim = '$nim'";
 $query = mysqli_query($conn, $sql);
-$data = mysqli_fetch_assoc($conn , $query);
+$data = mysqli_fetch_assoc($query); 
 
 if (!$data) {
     die("Data tidak ditemukan.");
@@ -33,8 +33,10 @@ if (!$data) {
 <div class="container">
     <h3 class="mb-3">Edit Data Mahasiswa</h3>
 
-    <form action="update_mhs.php" method="post">
+    <form action="update_mhs.php" method="post" enctype="multipart/form-data">
+
         <input type="hidden" name="nim" value="<?= $data['nim'] ?>">
+        <input type="hidden" name="foto_lama" value="<?= $data['foto'] ?>">
 
         <div class="mb-3">
             <label>Nama Mahasiswa</label>
@@ -45,10 +47,10 @@ if (!$data) {
             <label>Prodi</label>
             <select name="prodi" class="form-control" required>
                 <option value="">--Pilih Prodi--</option>
-                <option value="TL"   <?= ($data['prodi'] == "TL" ? "selected" : "") ?>>TL</option>
-                <option value="TRPL" <?= ($data['prodi'] == "TRPL" ? "selected" : "") ?>>TRPL</option>
-                <option value="TRM"  <?= ($data['prodi'] == "TRM" ? "selected" : "") ?>>TRM</option>
-                <option value="TRMK" <?= ($data['prodi'] == "TRMK" ? "selected" : "") ?>>TRMK</option>
+                <option value="TL"   <?= ($data['prodi']=="TL" ? "selected" : "") ?>>TL</option>
+                <option value="TRPL" <?= ($data['prodi']=="TRPL" ? "selected" : "") ?>>TRPL</option>
+                <option value="TRM"  <?= ($data['prodi']=="TRM" ? "selected" : "") ?>>TRM</option>
+                <option value="TRMK" <?= ($data['prodi']=="TRMK" ? "selected" : "") ?>>TRMK</option>
             </select>
         </div>
 
@@ -57,7 +59,18 @@ if (!$data) {
             <input type="email" name="email" class="form-control" value="<?= $data['email'] ?>" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Edit</button>
+        <div class="mb-3">
+            <label>No HP</label>
+            <input type="text" name="nohp" class="form-control" value="<?= $data['noHp'] ?>" required>
+        </div>
+
+        <div class="mb-3">
+        <label>Foto</label>
+        <input type="file" name="fileFoto" class="form-control" accept="image/*" id="fileFoto">
+    </div>
+
+
+        <button type="submit" class="btn btn-primary">Update</button>
         <a href="mahasiswa.php" class="btn btn-secondary">Kembali</a>
     </form>
 </div>

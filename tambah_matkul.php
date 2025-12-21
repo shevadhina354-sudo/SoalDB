@@ -1,5 +1,6 @@
 <?php
 include 'blok.php';
+
 if ($_SESSION['role'] == 'mhs') {
     header("location: index.php");
     exit();
@@ -10,40 +11,59 @@ if ($_SESSION['role'] == 'mhs') {
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Tambah Matkul</title>
+    <title>Tambah Mata Kuliah</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
 
-<h3>Form Tambah Matkul</h3>
+<body class="bg-light">
 
-<form action="simpan_matkul.php" method="post">
-    <table>
-        <tr>
-            <td>Kode Matkul</td>
-            <td><input type="text" name="kodeMatkul" required></td>
-        </tr>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
 
-        <tr>
-            <td>Nama Matkul</td>
-            <td><input type="text" name="namaMatkul" required></td>
-        </tr>
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Form Tambah Mata Kuliah</h5>
+                </div>
 
-        <tr>
-            <td>SKS</td>
-            <td><input type="number" name="sks" required></td>
-        </tr>
+                <div class="card-body">
+                    <form action="simpan_matkul.php" method="post">
 
-        <tr>
-            <td>Nidn</td>
-            <td><input type="number" name="nidn" required></td>
-        </tr>
+                        <div class="mb-3">
+                            <label class="form-label">Kode Matkul</label>
+                            <input type="text" name="kodeMatkul" class="form-control" required>
+                        </div>
 
-        <tr>
-            <td></td>
-            <td><button type="submit">Simpan</button></td>
-        </tr>
-    </table>
-</form>
+                        <div class="mb-3">
+                            <label class="form-label">Nama Mata Kuliah</label>
+                            <input type="text" name="namaMatkul" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">SKS</label>
+                            <input type="number" name="sks" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">NIDN Dosen</label>
+                            <input type="number" name="nidn" class="form-control" required>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="matkul.php" class="btn btn-secondary">Kembali</a>
+                            <button type="submit" class="btn btn-success">Simpan</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
